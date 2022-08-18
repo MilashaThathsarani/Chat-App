@@ -12,6 +12,7 @@ import java.io.IOException;
 import java.net.URL;
 
 public class LogIn {
+    public static String username;
     public Button btnLogin;
     public TextField userNametxt;
 
@@ -28,6 +29,8 @@ public class LogIn {
     }
 
     public void loginOnAction(ActionEvent actionEvent) throws IOException {
+        username = userNametxt.getText();
         loadChat();
     }
+
 }

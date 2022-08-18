@@ -15,7 +15,7 @@ public class ServerAppInitializer extends Application {
 
     @Override
     public void start(Stage primaryStage) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("view/LogIn.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("view/ServerPage.fxml"));
         Scene scene = new Scene(root);
         primaryStage.setScene(scene);
         primaryStage.initStyle(StageStyle.UNDECORATED);
