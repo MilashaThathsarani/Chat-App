@@ -39,7 +39,7 @@ public class ClientConnection implements Runnable{
             }
     }
 }
-    //send message back to client
+
     public void sendMessage(String message) {
         try {
             PrintWriter printWriter = new PrintWriter(accept.getOutputStream());

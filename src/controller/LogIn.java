@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
@@ -15,24 +16,23 @@ public class LogIn {
     public static String username;
     public Button btnLogin;
     public TextField userNametxt;
+    public AnchorPane logInPane;
 
-    private void loadChat() throws IOException {
-        Stage exitstage = (Stage) btnLogin.getScene().getWindow();
-        exitstage.close();
-        URL resource = this.getClass().getResource("../view/ChatPage.fxml");
-        Parent load = FXMLLoader.load(resource);
-        Scene scene = new Scene(load);
-        Stage stage = new Stage();
-        stage.initStyle(StageStyle.UNDECORATED);
-        stage.setScene(scene);
-        stage.show();
-    }
 
     public void loginOnAction(ActionEvent actionEvent) throws IOException {
         username = userNametxt.getText().isEmpty() ? "Unknown" : userNametxt.getText();
         Data.username = username;
         System.out.println(Data.username);
-        loadChat();
+//        loadChat();
+        URL resource = getClass().getResource("../view/ChatPage.fxml");
+        Parent load = FXMLLoader.load(resource);
+        Stage stage = new Stage();
+        Scene scene = new Scene(load);
+        stage.setScene(scene);
+        stage.show();
+
+        logInPane.getScene().getWindow().hide();
+
     }
 
 }
