@@ -29,7 +29,9 @@ public class LogIn {
     }
 
     public void loginOnAction(ActionEvent actionEvent) throws IOException {
-        username = userNametxt.getText();
+        username = userNametxt.getText().isEmpty() ? "Unknown" : userNametxt.getText();
+        Data.username = username;
+        System.out.println(Data.username);
         loadChat();
     }
 
