@@ -3,6 +3,8 @@ import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
+
 import java.io.*;
 import java.net.Socket;
 import static controller.LogIn.username;
@@ -11,6 +13,7 @@ public class ChatRoom extends Thread{
     public TextField msgField;
     public JFXButton btnSend;
     public Label userNametxt;
+    public AnchorPane chatRoom;
 
     BufferedReader reader;
     PrintWriter writer;
