@@ -8,7 +8,7 @@ import javafx.stage.StageStyle;
 
 import java.io.IOException;
 
-public class AppInitializer extends Application {
+public class ClientAppInitializer extends Application {
 
     public static void main(String[] args) {
         launch(args);
