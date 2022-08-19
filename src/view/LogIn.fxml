@@ -13,11 +13,16 @@
    <children>
       <AnchorPane prefHeight="56.0" prefWidth="407.0" style="-fx-background-color: #2c3e50;">
          <children>
-            <Label layoutX="27.0" layoutY="14.0" text="Live Chat" textFill="#e1dcdc">
+            <Label layoutX="26.0" layoutY="8.0" prefHeight="41.0" prefWidth="139.0" text="Live Chat" textFill="WHITE">
                <font>
-                  <Font name="Script MT Bold" size="24.0" />
+                  <Font name="Microsoft Yi Baiti" size="36.0" />
                </font>
             </Label>
+            <ImageView fitHeight="41.0" fitWidth="55.0" layoutX="329.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/icons8-chat.png" />
+               </image>
+            </ImageView>
          </children></AnchorPane>
       <TextField fx:id="userNametxt" layoutX="39.0" layoutY="318.0" prefHeight="42.0" prefWidth="330.0" promptText=" User Name" style="-fx-max-height: 100; -fx-background-color: gray;">
          <font>
@@ -30,7 +35,7 @@
       </Button>
       <ImageView fitHeight="120.0" fitWidth="100.0" layoutX="153.0" layoutY="127.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../assets/cccc.png" />
+            <Image url="@../assets/icons8-chat.png" />
          </image>
       </ImageView>
       <Line endX="306.0" layoutX="100.0" layoutY="536.0" startX="-100.0" />
