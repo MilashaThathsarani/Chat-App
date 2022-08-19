@@ -5,6 +5,8 @@ import controller.Data;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Pane;
 import util.ConnectionUtil;
 
 import java.io.*;
@@ -15,6 +17,7 @@ public class ChatRoom extends Thread{
     public JFXButton btnSend;
     public Label userNametxt;
     public JFXTextArea txtChatRoom;
+    public Pane emogiPane;
 
     Socket socket = null;
     public String username;
@@ -29,6 +32,8 @@ public class ChatRoom extends Thread{
        TaskReadThread task = new TaskReadThread(socket, this);
        Thread thread = new Thread(task);
        thread.start();
+
+       emogiPane.setVisible(false);
    }
 
     public void sendOnAction(ActionEvent actionEvent) throws IOException {
@@ -38,4 +43,15 @@ public class ChatRoom extends Thread{
         msgField.clear();
     }
 
+    public void emogiOnAction(MouseEvent mouseEvent) {
+        if (!emogiPane.isVisible()) {
+            emogiPane.setVisible(true);
+        } else {
+            emogiPane.setVisible(false);
+        }
+    }
+
+    public void emoji1OnAction(MouseEvent mouseEvent) {
+        msgField.appendText("\uD83D\uDE02");
+    }
 }
