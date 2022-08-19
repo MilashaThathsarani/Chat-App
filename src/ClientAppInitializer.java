@@ -6,6 +6,7 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 import java.io.IOException;
+import java.net.URL;
 
 public class ClientAppInitializer extends Application {
 
@@ -15,11 +16,11 @@ public class ClientAppInitializer extends Application {
 
     @Override
     public void start(Stage primaryStage) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("view/LogIn.fxml"));
-        Scene scene = new Scene(root);
-        primaryStage.setScene(scene);
-        primaryStage.initStyle(StageStyle.UNDECORATED);
-        //enableMove(scene, primaryStage);
-        primaryStage.show();
+        URL resource = getClass().getResource("view/LogIn.fxml");
+        Parent load = FXMLLoader.load(resource);
+        Stage stage = new Stage();
+        Scene scene = new Scene(load);
+        stage.setScene(scene);
+        stage.show();
     }
 }
