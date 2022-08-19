@@ -2,10 +2,13 @@ package controller.client;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextArea;
 import controller.Data;
+import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
+import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 import util.ConnectionUtil;
 
 import java.io.*;
@@ -55,6 +58,12 @@ public class ChatRoom extends Thread{
     }
 
     public void imageOnAction(MouseEvent mouseEvent) {
+//        Stage stage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
+//        chooser = new FileChooser();
+//        chooser.setTitle("Open Image");
+//        this.path = chooser.showOpenDialog(stage);
+//        writer.println(clientlbl.getText() + " " + "img" + path.getPath());
+//        writer.flush();
 
     }
 
