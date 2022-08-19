@@ -2,7 +2,6 @@ package controller.client;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextArea;
 import controller.Data;
-import javafx.event.ActionEvent;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
@@ -11,6 +10,7 @@ import util.ConnectionUtil;
 
 import java.io.*;
 import java.net.Socket;
+import static controller.LogIn.username;
 
 public class ChatRoom extends Thread{
     public TextField msgField;
@@ -20,7 +20,6 @@ public class ChatRoom extends Thread{
     public Pane emogiPane;
 
     Socket socket = null;
-    public String username;
     PrintWriter writer;
 
    public void initialize() throws IOException {
@@ -36,7 +35,7 @@ public class ChatRoom extends Thread{
        emogiPane.setVisible(false);
    }
 
-    public void sendOnAction(ActionEvent actionEvent) throws IOException {
+    public void sendOnAction(MouseEvent actionEvent) throws IOException {
         PrintWriter printWriter= new PrintWriter(socket.getOutputStream());
         printWriter.println(Data.username + " : " + msgField.getText());
         printWriter.flush();
@@ -52,6 +51,38 @@ public class ChatRoom extends Thread{
     }
 
     public void emoji1OnAction(MouseEvent mouseEvent) {
+        msgField.appendText("\uD83D\uDE03");
+    }
+
+    public void imageOnAction(MouseEvent mouseEvent) {
+
+    }
+
+    public void emoji2OnAction(MouseEvent mouseEvent) {
+        msgField.appendText("\uD83E\uDD17");
+    }
+
+    public void emoji3OnAction(MouseEvent mouseEvent) {
+        msgField.appendText("❤️❤️");
+    }
+
+    public void emoji4OnAction(MouseEvent mouseEvent) {
+        msgField.appendText("\uD83D\uDE32");
+    }
+
+    public void emoji5OnAction(MouseEvent mouseEvent) {
         msgField.appendText("\uD83D\uDE02");
+    }
+
+    public void emoji6OnAction(MouseEvent mouseEvent) {
+        msgField.appendText("\uD83D\uDE25");
+    }
+
+    public void emoji7OnAction(MouseEvent mouseEvent) {
+        msgField.appendText("\uD83D\uDE2B");
+    }
+
+    public void emoji8OnAction(MouseEvent mouseEvent) {
+        msgField.appendText("\uD83D\uDE24");
     }
 }
